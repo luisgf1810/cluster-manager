@@ -1,0 +1,10 @@
+<div class="ngdialog-message" >
+    <h4 style="margin-top:5px; font-weight: bold">{{modalhead}}</h4>
+    <div>{{modalcontent}}</div>
+    <button ng-disabled="block" ng-hide="!button" class="btn btn-primary" ng-click="clickButton()" style="margin-top:25px;">{{modalleyendb1}}</button>
+    <button ng-disabled="block" class="btn btn-primary" ng-click="closeDialog()" style="margin-top:25px;">{{modalleyendb2}}</button>
+    <div>
+        <div ng-hide="!block" style="color:#7a0010; margin-top:15px"><img style="margin-right:5px;" src="assets/img/spinner.gif"/><span>Processing...</span></div>
+    </div>
+</div>
+

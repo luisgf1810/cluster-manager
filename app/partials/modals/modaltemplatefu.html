@@ -1,0 +1,29 @@
+<div class="ngdialog-message" >
+    <h4 style="margin-top:5px; font-weight: bold">File Upload</h4>
+    <div style="margin-bottom:15px">Select file to send to server</div>
+    <input ng-disabled="!button" type="file" ng-model-instant id="fileToUpload" onchange="angular.element(this).scope().setFiles(this)" />
+    <!--input type="file" ng-file-select="onFileSelect($files)" -->
+    <div ng-show="files.length" style="margin-top:15px">
+        <div ng-repeat="file in files.slice(0)">
+            <div class="row">
+                <span style="padding-left: 18px">Type: {{file.type}}</span>
+            </div>
+            <div class="row">
+                <span style="padding-left: 18px">Size: </span>
+                (<span ng-switch="file.size > 1024*1024">
+                    <span ng-switch-when="true">{{file.size / 1024 / 1024 | number:2}} MB</span>
+                    <span ng-switch-default>{{file.size / 1024 | number:2}} kB</span>
+                </span>)
+            </div>
+        </div>
+        <div ng-show="progressVisible" style="margin-top:15px;">
+            <!--div class="percent">{{progress}}%</div-->
+            <div class="progress-bar">
+                <div class="uploaded" ng-style="{'width': progress+'%'}"></div>
+            </div>
+        </div>
+    </div>
+    <button ng-hide="!button" class="btn btn-primary" ng-click="uploadFile()" style="margin-top:25px;">Upload</button>
+    <button class="btn btn-primary" ng-click="closeDialog()" style="margin-top:25px;">Go Back</button>
+</div>
+
