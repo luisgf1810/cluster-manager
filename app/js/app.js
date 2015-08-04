@@ -15,7 +15,7 @@ angular.module('clusterm', [
     'clusterm.create',
     'clusterm.browse',
     'clusterm.browse2',
-    'clusterm.test'
+    'clusterm.about'
 ]).
 config(['$stateProvider', function($stateProvider) {
         $stateProvider
@@ -34,10 +34,10 @@ config(['$stateProvider', function($stateProvider) {
                 templateUrl: 'partials/browse2.html',
                 controller: 'browse2Ctrl'
             })
-            .state('test',
-            {   url: '/test',
-                templateUrl: 'partials/test.html',
-                controller: 'testCtrl'
+            .state('about',
+            {   url: '/about',
+                templateUrl: 'partials/about.html',
+                controller: 'aboutCtrl'
             })
 
 }]).

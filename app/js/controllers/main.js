@@ -3,7 +3,7 @@
 angular.module('clusterm.main', [])
     .controller('mainCtrl', ['$scope', '$state', function($scope, $state) {
         $scope.test = function() {
-                $state.transitionTo('test');
+            $state.transitionTo('about');
         }
         $scope.browse = function() {
             $state.transitionTo('browse');
