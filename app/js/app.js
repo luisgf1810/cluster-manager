@@ -15,7 +15,11 @@ angular.module('clusterm', [
     'clusterm.create',
     'clusterm.browse',
     'clusterm.browse2',
-    'clusterm.about'
+    'clusterm.about',
+    'clusterm.repository-list',
+    'repository-list-directive',
+    'app-version-services',
+    'app-mode-services'
 ]).
 config(['$stateProvider', function($stateProvider) {
         $stateProvider
@@ -39,7 +43,11 @@ config(['$stateProvider', function($stateProvider) {
                 templateUrl: 'partials/about.html',
                 controller: 'aboutCtrl'
             })
-
+            .state('repository-list',
+            {   url: '/repository-list',
+                templateUrl: 'partials/repository/repository-list.html',
+                controller: 'repositorylistCtrl'
+            })
 }]).
 run(['$state', function ($state) {
         $state.transitionTo('browse');
