@@ -4,32 +4,32 @@
 module.exports = function (grunt) {
     grunt.initConfig({
 
-        clean: ["srv1", '.tmp'],
+        clean: ["deploy", '.tmp'],
 
         copy: {
             main: {
                 expand: true,
                 cwd: 'app/',
                 src: ['**', '!scripts/**', '!lib/**', '!**/*.css'],
-                dest: 'srv1/'
+                dest: 'deploy/'
             }
         },
 
         rev: {
             files: {
-                src: ['srv1/**/*.{scripts,css}']
+                src: ['deploy/**/*.{scripts,css}']
             }
         },
 
         useminPrepare: {
             html: 'app/index.html',
             options: {
-                dest: 'srv1'
+                dest: 'deploy'
             }
         },
 
         usemin: {
-            html: ['srv1/index.html']
+            html: ['deploy/index.html']
         },
 
         uglify: {
@@ -39,9 +39,21 @@ module.exports = function (grunt) {
             }
         },
 
-        sshexec: {
+        docker_io: {
+            options: {
+                dockerFileLocation: './container',
+                buildName: 'ClusterManager',
+                tag: 'latest',
+                pushLocation: '',
+                username: 'process.env.USER',
+                push: false,
+                force: true
+            }
+        }
+
+        /*sshexec: {
             clear: {
-                command: ['cd /usr/share/nginx/html', 'sudo rm -rf srv1'].join("&&"),
+                command: ['cd /usr/share/nginx/html', 'sudo rm -rf deploy'].join("&&"),
                 options: {
                     host: 'agdrone.noip.me',
                     username: 'root',
@@ -54,7 +66,7 @@ module.exports = function (grunt) {
         sftp: {
             deploy: {
                 files: {
-                    "./": "srv1/**"
+                    "./": "deploy/**"
                 },
                 options: {
                     "path": "/usr/share/nginx/html/",
@@ -66,7 +78,7 @@ module.exports = function (grunt) {
                     "createDirectories": true
                 }
             }
-        }
+        }*/
 
     });
 
@@ -77,10 +89,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-rev');
     grunt.loadNpmTasks('grunt-usemin');
-    grunt.loadNpmTasks('grunt-ssh');
+    grunt.loadNpmTasks('grunt-docker-io');
+    //grunt.loadNpmTasks('grunt-ssh');
 
     // Tell Grunt what to do when we type "grunt" into the terminal
     grunt.registerTask('default', [
-        'copy', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'rev', 'usemin', 'sshexec', 'sftp'
+        'copy', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'rev', 'usemin', 'docker-io', /*'sshexec', 'sftp'*/
     ]);
 };

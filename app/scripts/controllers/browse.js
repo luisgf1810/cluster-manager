@@ -16,7 +16,7 @@ angular.module('clusterm.browse', [])
         $scope.transit = function() {
             if ($scope.id!=0) {
                 if ($scope.id==1) {
-                    $state.transitionTo('browse2');
+                    $state.transitionTo('repository-list');
                 } else if ($scope.id==2)  {
                     $state.transitionTo('create');
 

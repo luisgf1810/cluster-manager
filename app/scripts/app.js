@@ -47,11 +47,11 @@ config(['$stateProvider', function($stateProvider) {
                 templateUrl: 'partials/about.html',
                 controller: 'aboutCtrl'
             })
-            /*.state('repository-list',
+            .state('repository-list',
             {   url: '/repository-list',
                 templateUrl: 'partials/repository/repository-list.html',
                 controller: 'repositorylistCtrl'
-            })*/
+            })
 }]).
 run(['$state', function ($state) {
         $state.transitionTo('browse');

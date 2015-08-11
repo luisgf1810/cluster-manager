@@ -16,7 +16,7 @@ angular.module('clusterm.registry-services', ['ngResource'])
       },
     });
   }])
-  .factory('Repository', ['$resource', '$log',  function($resource, $log){
+  .factory('repository', ['$resource', '$log',  function($resource, $log){
     return $resource('/v1/search?q=:searchTerm', {}, {
       'query': {
         method:'GET',
