@@ -145,7 +145,7 @@ if (!Function.prototype.bind) {
         // NOTE Function objects created using Function.prototype.bind do not
         // have a prototype property or the [[Code]], [[FormalParameters]], and
         // [[Scope]] internal properties.
-        // XXX can't delete prototype in pure-js.
+        // XXX can't delete prototype in pure-scripts.
 
         // 22. Return F.
         return bound;

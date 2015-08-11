@@ -9,17 +9,21 @@ angular.module('clusterm', [
     'ui.codemirror',
     'nvd3',
     'clusterm.main',
-    'clusterm.filters',
-    'clusterm.services',
-    'clusterm.directives',
+    'clusterm.appver-directive',
+    'clusterm.repository-selector-directive',
+    'clusterm.repository-list-directive',
+    'clusterm.tag-list-directive',
+    'clusterm.image-details-directive',
+    'clusterm.app-mode-services',
+    'clusterm.app-version-services',
+    'clusterm.registry-services',
+    'clusterm.bjs-service',
+    'clusterm.range-filter',
+    'clusterm.uuid-service',
     'clusterm.create',
     'clusterm.browse',
     'clusterm.browse2',
-    'clusterm.about',
-    'clusterm.repository-list',
-    'repository-list-directive',
-    'app-version-services',
-    'app-mode-services'
+    'clusterm.about'
 ]).
 config(['$stateProvider', function($stateProvider) {
         $stateProvider
@@ -43,11 +47,11 @@ config(['$stateProvider', function($stateProvider) {
                 templateUrl: 'partials/about.html',
                 controller: 'aboutCtrl'
             })
-            .state('repository-list',
+            /*.state('repository-list',
             {   url: '/repository-list',
                 templateUrl: 'partials/repository/repository-list.html',
                 controller: 'repositorylistCtrl'
-            })
+            })*/
 }]).
 run(['$state', function ($state) {
         $state.transitionTo('browse');

@@ -4,8 +4,8 @@ var util = require('./utils.js');
 var semver = require('semver');
 var shell = require('shelljs');
 
-var ngdoc = require('../../node_modules/grunt-ngdocs/src/ngdoc.js');
-var reader = require('../../node_modules/grunt-ngdocs/src/reader.js');
+var ngdoc = require('../../node_modules/grunt-ngdocs/src/ngdoc.scripts');
+var reader = require('../../node_modules/grunt-ngdocs/src/reader.scripts');
 
 var projectPath = path.resolve(__dirname, '../..');
 var pkg = require(path.resolve(projectPath, 'package.json'));
@@ -235,7 +235,7 @@ module.exports = function(grunt) {
           return;
         }
 
-        // Insert -unstable or -stable into the filename for .css and .js files
+        // Insert -unstable or -stable into the filename for .css and .scripts files
         var newFileName;
         if (/(css|js)/.test(ext)) {
           newFileName = basename + extension + ext;

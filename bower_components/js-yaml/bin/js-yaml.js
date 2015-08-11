@@ -22,7 +22,7 @@ var yaml = require('..');
 
 
 var cli = new argparse.ArgumentParser({
-  prog:     'js-yaml',
+  prog:     'scripts-yaml',
   version:  require('../package.json').version,
   addHelp:  true
 });

@@ -157,7 +157,7 @@ function indexBy(array, propName) {
   return result;
 }
 
-// extracted from underscore.js
+// extracted from underscore.scripts
 // Return a copy of the object only containing the whitelisted properties.
 function pick(obj) {
   var copy = {};
@@ -168,7 +168,7 @@ function pick(obj) {
   return copy;
 }
 
-// extracted from underscore.js
+// extracted from underscore.scripts
 // Return a copy of the object omitting the blacklisted properties.
 function omit(obj) {
   var copy = {};
@@ -274,9 +274,9 @@ angular.module('ui.router.state', ['ui.router.router', 'ui.router.util']);
  * <!doctype html>
  * <html ng-app="myApp">
  * <head>
- *   <script src="js/angular.js"></script>
+ *   <script src="scripts/angular.scripts"></script>
  *   <!-- Include the ui-router script -->
- *   <script src="js/angular-ui-router.min.js"></script>
+ *   <script src="scripts/angular-ui-router.min.scripts"></script>
  *   <script>
  *     // ...and add 'ui.router' as a dependency
  *     var myApp = angular.module('myApp', ['ui.router']);

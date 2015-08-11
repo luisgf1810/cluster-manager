@@ -1544,7 +1544,7 @@ function run_beautifier_tests(test_obj, Urlencoded, js_beautify, html_beautify, 
         bt('if(a &&\n(b\n||\nc\n||d)\n&&\ne) e = f', 'if (a &&\n    (b ||\n        c || d) &&\n    e) e = f');
         test_fragment('\n\n"x"', '"x"');
 
-        // this beavior differs between js and python, defaults to unlimited in js, 10 in python
+        // this beavior differs between scripts and python, defaults to unlimited in scripts, 10 in python
         bt('a = 1;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nb = 2;',
             'a = 1;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nb = 2;');
         opts.max_preserve_newlines = 8;
@@ -2431,8 +2431,8 @@ function run_beautifier_tests(test_obj, Urlencoded, js_beautify, html_beautify, 
             "a:not(\"foobar\\\";{}omg\") {\n  content: 'example\\';{} text';\n  content: \"example\\\";{} text\";\n}");
 
         // may not eat the space before "["
-        btc('html.js [data-custom="123"] {\n  opacity: 1.00;\n}');
-        btc('html.js *[data-custom="123"] {\n  opacity: 1.00;\n}');
+        btc('html.scripts [data-custom="123"] {\n  opacity: 1.00;\n}');
+        btc('html.scripts *[data-custom="123"] {\n  opacity: 1.00;\n}');
 
         return sanitytest;
     }

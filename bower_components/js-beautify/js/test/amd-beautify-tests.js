@@ -14,7 +14,7 @@ requirejs.config({
 });
 
 function amd_beautifier_tests() {
-    console.log('Testing with node.js Require.js...');
+    console.log('Testing with node.scripts Require.js...');
     var beautify = requirejs('beautify/index');
     var results = run_beautifier_tests(
             new SanityTest(),

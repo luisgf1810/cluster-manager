@@ -24,10 +24,10 @@ function node_beautifier_tests() {
 
     var suite = new Benchmark.Suite;
     
-    suite.add("js-beautify (underscore)", function() {
+    suite.add("scripts-beautify (underscore)", function() {
         js_beautify(data, options);
     })
-    .add("js-beautify (underscore-min)", function() {
+    .add("scripts-beautify (underscore-min)", function() {
         js_beautify(data_min, options);
     })
     // add listeners

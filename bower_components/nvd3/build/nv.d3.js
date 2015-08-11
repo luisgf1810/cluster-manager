@@ -227,7 +227,7 @@ nv.interactiveGuideline = function() {
                 var mouseOutAnyReason = false;
                 if (isMSIE) {
                     /*
-                     D3.js (or maybe SVG.getScreenCTM) has a nasty bug in Internet Explorer 10.
+                     D3.scripts (or maybe SVG.getScreenCTM) has a nasty bug in Internet Explorer 10.
                      d3.mouse() returns incorrect X,Y mouse coordinates when mouse moving
                      over a rect in IE 10.
                      However, d3.event.offsetX/Y also returns the mouse coordinates

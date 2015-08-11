@@ -2,7 +2,7 @@
 // It is not described in the YAML specification.
 //
 // This schema is based on JS-YAML's default safe schema and includes
-// JavaScript-specific types: !!js/undefined, !!js/regexp and !!js/function.
+// JavaScript-specific types: !!scripts/undefined, !!scripts/regexp and !!scripts/function.
 //
 // Also this schema is used as default base schema at `Schema.create` function.
 

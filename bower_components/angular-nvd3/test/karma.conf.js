@@ -15,8 +15,8 @@ module.exports = function(config) {
             'lib/angular-mocks.js',
             'lib/d3.min.js',
             'lib/nv.d3.min.js',
-            'src/**/*.js',
-            'test/**/*Spec.js'
+            'src/**/*.scripts',
+            'test/**/*Spec.scripts'
         ],
 
         // List of frameworks you want to use. Typically, you will set this to ['jasmine'], ['mocha'] or ['qunit']...

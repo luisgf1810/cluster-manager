@@ -25,7 +25,7 @@
 
 
 // Based on original artworks of base64 encoder/decoder by [Mozilla][1]
-// [1]: http://lxr.mozilla.org/mozilla/source/extensions/xml-rpc/src/nsXmlRpcClient.js
+// [1]: http://lxr.mozilla.org/mozilla/source/extensions/xml-rpc/src/nsXmlRpcClient.scripts
 
 
 (function (exports) {

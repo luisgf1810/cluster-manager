@@ -339,7 +339,7 @@
            * @propertyOf  ui.grid.exporter.api:GridOptions
            * @description The orientation, should be a valid pdfMake
            * paper size, usually 'A4' or 'LETTER'
-           * {@link https://github.com/bpampuch/pdfmake/blob/master/src/standardPageSizes.js pdfMake page sizes}
+           * {@link https://github.com/bpampuch/pdfmake/blob/master/src/standardPageSizes.scripts pdfMake page sizes}
            * <br/>Defaults to A4
            */
           gridOptions.exporterPdfPageSize = gridOptions.exporterPdfPageSize ? gridOptions.exporterPdfPageSize : 'A4';
@@ -1200,7 +1200,7 @@
    *
    *  @example
    <example module="app">
-   <file name="app.js">
+   <file name="app.scripts">
    var app = angular.module('app', ['ui.grid', 'ui.grid.exporter']);
 
    app.controller('MainCtrl', ['$scope', function ($scope) {

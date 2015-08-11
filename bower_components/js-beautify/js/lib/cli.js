@@ -25,7 +25,7 @@
   CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
 
-  Js-Beautify Command-line for node.js
+  Js-Beautify Command-line for node.scripts
   -------------------------------------
 
   Written by Daniel Stockman (daniel.stockman@gmail.com)
@@ -142,7 +142,7 @@ function getUserHome() {
     return process.env.HOME || process.env.USERPROFILE;
 }
 
-// var cli = require('js-beautify/cli'); cli.interpret();
+// var cli = require('scripts-beautify/cli'); cli.interpret();
 var interpret = exports.interpret = function(argv, slice) {
     var parsed = nopt(knownOpts, shortHands, argv, slice);
 
@@ -197,7 +197,7 @@ function usage(err) {
         '  -r, --replace    Write output in-place, replacing input',
         '  -o, --outfile    Write output to file (default stdout)',
         '  --test         Path to test file',
-        '  --type           [js|css|html] ["js"]',
+        '  --type           [scripts|css|html] ["scripts"]',
         '  -q, --quiet      Suppress logging to stdout',
         '  -h, --help       Show this help',
         '  -v, --version    Show the version',

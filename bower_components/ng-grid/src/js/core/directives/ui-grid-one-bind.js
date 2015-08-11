@@ -34,7 +34,7 @@
    * and {@link ui.grid.directive:uiGridOneBindAriaLabelledbyGrid uiGridOneBindAriaLabelledbyGrid} directives.
    *
    */
-  //https://github.com/joshkurz/Black-Belt-AngularJS-Directives/blob/master/directives/Optimization/oneBind.js
+  //https://github.com/joshkurz/Black-Belt-AngularJS-Directives/blob/master/directives/Optimization/oneBind.scripts
   var oneBinders = angular.module('ui.grid');
   angular.forEach([
       /**
@@ -271,7 +271,7 @@
                     }
                     break;
                   case 'addClass':
-                    //Pulled from https://github.com/Pasvaz/bindonce/blob/master/bindonce.js
+                    //Pulled from https://github.com/Pasvaz/bindonce/blob/master/bindonce.scripts
                     if (angular.isObject(newV) && !angular.isArray(newV)) {
                       var results = [];
                       var nonNullFound = false; //We don't want to remove the binding unless the key is actually defined

@@ -12,7 +12,7 @@
  * @name angular.mock
  * @description
  *
- * Namespace from 'angular-mocks.js' which contains testing related code.
+ * Namespace from 'angular-mocks.scripts' which contains testing related code.
  */
 angular.mock = {};
 
@@ -202,7 +202,7 @@ angular.mock.$Browser.prototype = {
  * information.
  *
  *
- * ```js
+ * ```scripts
  *   describe('$exceptionHandlerProvider', function() {
  *
  *     it('should capture log messages and exceptions', function() {
@@ -334,7 +334,7 @@ angular.mock.$LogProvider = function() {
        * Array of messages logged using {@link ngMock.$log#log}.
        *
        * @example
-       * ```js
+       * ```scripts
        * $log.log('Some Log');
        * var first = $log.log.logs.unshift();
        * ```
@@ -348,7 +348,7 @@ angular.mock.$LogProvider = function() {
        * Array of messages logged using {@link ngMock.$log#info}.
        *
        * @example
-       * ```js
+       * ```scripts
        * $log.info('Some Info');
        * var first = $log.info.logs.unshift();
        * ```
@@ -362,7 +362,7 @@ angular.mock.$LogProvider = function() {
        * Array of messages logged using {@link ngMock.$log#warn}.
        *
        * @example
-       * ```js
+       * ```scripts
        * $log.warn('Some Warning');
        * var first = $log.warn.logs.unshift();
        * ```
@@ -376,7 +376,7 @@ angular.mock.$LogProvider = function() {
        * Array of messages logged using {@link ngMock.$log#error}.
        *
        * @example
-       * ```js
+       * ```scripts
        * $log.error('Some Error');
        * var first = $log.error.logs.unshift();
        * ```
@@ -390,7 +390,7 @@ angular.mock.$LogProvider = function() {
        * Array of messages logged using {@link ngMock.$log#debug}.
        *
        * @example
-       * ```js
+       * ```scripts
        * $log.debug('Some Error');
        * var first = $log.debug.logs.unshift();
        * ```
@@ -622,7 +622,7 @@ function padNumber(num, digits, trim) {
  * incomplete we might be missing some non-standard methods. This can result in errors like:
  * "Date.prototype.foo called on incompatible Object".
  *
- * ```js
+ * ```scripts
  * var newYearInBratislava = new TzDate(-1, '2009-12-31T23:00:00Z');
  * newYearInBratislava.getTimezoneOffset() => -60;
  * newYearInBratislava.getFullYear() => 2010;
@@ -979,7 +979,7 @@ angular.mock.dump = function(object) {
  * The following code shows how to setup and use the mock backend when unit testing a controller.
  * First we create the controller under test:
  *
-  ```js
+  ```scripts
   // The controller code
   function MyController($scope, $http) {
     var authToken;
@@ -1004,7 +1004,7 @@ angular.mock.dump = function(object) {
  *
  * Now we setup the mock backend and create the test specs:
  *
-  ```js
+  ```scripts
     // testing controller
     describe('MyController', function() {
        var $httpBackend, $rootScope, createController;
@@ -1462,7 +1462,7 @@ function createHttpBackendMock($rootScope, $delegate, $browser) {
    * Typically, you would call this method following each test case that asserts requests using an
    * "afterEach" clause.
    *
-   * ```js
+   * ```scripts
    *   afterEach($httpBackend.verifyNoOutstandingExpectation);
    * ```
    */
@@ -1483,7 +1483,7 @@ function createHttpBackendMock($rootScope, $delegate, $browser) {
    * Typically, you would call this method following each test case that asserts requests using an
    * "afterEach" clause.
    *
-   * ```js
+   * ```scripts
    *   afterEach($httpBackend.verifyNoOutstandingRequest);
    * ```
    */
@@ -1790,7 +1790,7 @@ angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
  * To setup the application to run with this http backend, you have to create a module that depends
  * on the `ngMockE2E` and your application modules and defines the fake backend:
  *
- * ```js
+ * ```scripts
  *   myAppDev = angular.module('myAppDev', ['myApp', 'ngMockE2E']);
  *   myAppDev.run(function($httpBackend) {
  *     phones = [{name: 'phone1'}, {name: 'phone2'}];
@@ -2075,7 +2075,7 @@ if(window.jasmine || window.mocha) {
    *
    * ## Example
    * Example of what a typical jasmine tests looks like with the inject method.
-   * ```js
+   * ```scripts
    *
    *   angular.module('myApplicationModule', [])
    *       .value('mode', 'app')

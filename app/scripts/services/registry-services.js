@@ -7,7 +7,7 @@
 // https://docs.angularjs.org/tutorial/step_11
 // https://docs.angularjs.org/api/ngResource/service/$resource
 
-angular.module('registry-services', ['ngResource'])
+angular.module('clusterm.registry-services', ['ngResource'])
   .factory('RegistryHost', ['$resource', '$log',  function($resource, $log){
     return $resource('/registry-host.json', {}, {
       'query': {

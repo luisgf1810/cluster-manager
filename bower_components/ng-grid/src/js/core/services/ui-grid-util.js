@@ -213,7 +213,7 @@ module.service('gridUtil', ['$log', '$window', '$document', '$http', '$templateC
      *
        @example
        <example module="app">
-        <file name="app.js">
+        <file name="app.scripts">
           var app = angular.module('app', ['ui.grid']);
 
           app.controller('MainCtrl', ['$scope', 'gridUtil', function ($scope, gridUtil) {

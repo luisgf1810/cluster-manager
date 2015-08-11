@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('repository-list-directive', [])
+angular.module('clusterm.repository-list-directive', [])
   .directive('repositoryList', function(){
     return {
       restrict: 'E',

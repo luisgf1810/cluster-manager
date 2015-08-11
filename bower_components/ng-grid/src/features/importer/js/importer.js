@@ -471,7 +471,7 @@
          * @methodOf ui.grid.importer.service:uiGridImporterService
          * @description Parses a csv file into an array of arrays, with the first
          * array being the headers, and the remaining arrays being the data.
-         * The logic for this comes from https://github.com/thetalecrafter/excel.js/blob/master/src/csv.js,
+         * The logic for this comes from https://github.com/thetalecrafter/excel.scripts/blob/master/src/csv.scripts,
          * which is noted as being under the MIT license.  The code is modified to pass the jscs yoda condition
          * checker
          * @param {FileObject} importFile the file that we want to import, as a

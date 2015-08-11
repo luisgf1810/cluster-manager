@@ -38,7 +38,7 @@ module.exports = function (grunt) {
             ' * Copyright 2011-<%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
             ' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n' +
             ' */\n',
-    // NOTE: This jqueryCheck/jqueryVersionCheck code is duplicated in customizer.js;
+    // NOTE: This jqueryCheck/jqueryVersionCheck code is duplicated in customizer.scripts;
     //       if making changes here, be sure to update the other copy too.
     jqueryCheck: [
       'if (typeof jQuery === \'undefined\') {',
@@ -62,7 +62,7 @@ module.exports = function (grunt) {
 
     jshint: {
       options: {
-        jshintrc: 'js/.jshintrc'
+        jshintrc: 'scripts/.jshintrc'
       },
       grunt: {
         options: {
@@ -71,22 +71,22 @@ module.exports = function (grunt) {
         src: ['Gruntfile.js', 'grunt/*.js']
       },
       core: {
-        src: 'js/*.js'
+        src: 'scripts/*.js'
       },
       test: {
         options: {
-          jshintrc: 'js/tests/unit/.jshintrc'
+          jshintrc: 'scripts/tests/unit/.jshintrc'
         },
-        src: 'js/tests/unit/*.js'
+        src: 'scripts/tests/unit/*.js'
       },
       assets: {
-        src: ['docs/assets/js/src/*.js', 'docs/assets/js/*.js', '!docs/assets/js/*.min.js']
+        src: ['docs/assets/scripts/src/*.js', 'docs/assets/scripts/*.js', '!docs/assets/scripts/*.min.js']
       }
     },
 
     jscs: {
       options: {
-        config: 'js/.jscsrc'
+        config: 'scripts/.jscsrc'
       },
       grunt: {
         src: '<%= jshint.grunt.src %>'
@@ -112,20 +112,20 @@ module.exports = function (grunt) {
       },
       bootstrap: {
         src: [
-          'js/transition.js',
-          'js/alert.js',
-          'js/button.js',
-          'js/carousel.js',
-          'js/collapse.js',
-          'js/dropdown.js',
-          'js/modal.js',
-          'js/tooltip.js',
-          'js/popover.js',
-          'js/scrollspy.js',
-          'js/tab.js',
-          'js/affix.js'
+          'scripts/transition.js',
+          'scripts/alert.js',
+          'scripts/button.js',
+          'scripts/carousel.js',
+          'scripts/collapse.js',
+          'scripts/dropdown.js',
+          'scripts/modal.js',
+          'scripts/tooltip.js',
+          'scripts/popover.js',
+          'scripts/scrollspy.js',
+          'scripts/tab.js',
+          'scripts/affix.js'
         ],
-        dest: 'dist/js/<%= pkg.name %>.js'
+        dest: 'dist/scripts/<%= pkg.name %>.js'
       }
     },
 
@@ -135,37 +135,37 @@ module.exports = function (grunt) {
       },
       core: {
         src: '<%= concat.bootstrap.dest %>',
-        dest: 'dist/js/<%= pkg.name %>.min.js'
+        dest: 'dist/scripts/<%= pkg.name %>.min.js'
       },
       customize: {
         // NOTE: This src list is duplicated in footer.html; if making changes here, be sure to update the other copy too.
         src: [
-          'docs/assets/js/vendor/less.min.js',
-          'docs/assets/js/vendor/jszip.min.js',
-          'docs/assets/js/vendor/uglify.min.js',
-          'docs/assets/js/vendor/Blob.js',
-          'docs/assets/js/vendor/FileSaver.js',
-          'docs/assets/js/raw-files.min.js',
-          'docs/assets/js/src/customizer.js'
+          'docs/assets/scripts/vendor/less.min.js',
+          'docs/assets/scripts/vendor/jszip.min.js',
+          'docs/assets/scripts/vendor/uglify.min.js',
+          'docs/assets/scripts/vendor/Blob.js',
+          'docs/assets/scripts/vendor/FileSaver.js',
+          'docs/assets/scripts/raw-files.min.js',
+          'docs/assets/scripts/src/customizer.js'
         ],
-        dest: 'docs/assets/js/customize.min.js'
+        dest: 'docs/assets/scripts/customize.min.js'
       },
       docsJs: {
         // NOTE: This src list is duplicated in footer.html; if making changes here, be sure to update the other copy too.
         src: [
-          'docs/assets/js/vendor/holder.js',
-          'docs/assets/js/vendor/ZeroClipboard.min.js',
-          'docs/assets/js/src/application.js'
+          'docs/assets/scripts/vendor/holder.js',
+          'docs/assets/scripts/vendor/ZeroClipboard.min.js',
+          'docs/assets/scripts/src/application.js'
         ],
-        dest: 'docs/assets/js/docs.min.js'
+        dest: 'docs/assets/scripts/docs.min.js'
       }
     },
 
     qunit: {
       options: {
-        inject: 'js/tests/unit/phantom.js'
+        inject: 'scripts/tests/unit/phantom.js'
       },
-      files: 'js/tests/index.html'
+      files: 'scripts/tests/index.html'
     },
 
     less: {
@@ -393,7 +393,7 @@ module.exports = function (grunt) {
           build: process.env.TRAVIS_JOB_ID,
           concurrency: 10,
           maxRetries: 3,
-          urls: ['http://127.0.0.1:3000/js/tests/index.html'],
+          urls: ['http://127.0.0.1:3000/scripts/tests/index.html'],
           browsers: grunt.file.readYAML('grunt/sauce_browsers.yml')
         }
       }
@@ -425,7 +425,7 @@ module.exports = function (grunt) {
   var testSubtasks = [];
   // Skip core tests if running a different subset of the test suite
   if (runSubset('core')) {
-    testSubtasks = testSubtasks.concat(['dist-css', 'dist-js', 'csslint:dist', 'test-js', 'docs']);
+    testSubtasks = testSubtasks.concat(['dist-css', 'dist-scripts', 'csslint:dist', 'test-scripts', 'docs']);
   }
   // Skip HTML validation if running a different subset of the test suite
   if (runSubset('validate-html') &&
@@ -436,24 +436,24 @@ module.exports = function (grunt) {
   // Only run Sauce Labs tests if there's a Sauce access key
   if (typeof process.env.SAUCE_ACCESS_KEY !== 'undefined' &&
       // Skip Sauce if running a different subset of the test suite
-      runSubset('sauce-js-unit') &&
+      runSubset('sauce-scripts-unit') &&
       // Skip Sauce on Travis when [skip sauce] is in the commit message
       isUndefOrNonZero(process.env.TWBS_DO_SAUCE)) {
     testSubtasks.push('connect');
     testSubtasks.push('saucelabs-qunit');
   }
   grunt.registerTask('test', testSubtasks);
-  grunt.registerTask('test-js', ['jshint:core', 'jshint:test', 'jshint:grunt', 'jscs:core', 'jscs:test', 'jscs:grunt', 'qunit']);
+  grunt.registerTask('test-scripts', ['jshint:core', 'jshint:test', 'jshint:grunt', 'jscs:core', 'jscs:test', 'jscs:grunt', 'qunit']);
 
   // JS distribution task.
-  grunt.registerTask('dist-js', ['concat', 'uglify:core', 'commonjs']);
+  grunt.registerTask('dist-scripts', ['concat', 'uglify:core', 'commonjs']);
 
   // CSS distribution task.
   grunt.registerTask('less-compile', ['less:compileCore', 'less:compileTheme']);
   grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:core', 'autoprefixer:theme', 'usebanner', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme']);
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'dist-js']);
+  grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'dist-scripts']);
 
   // Default task.
   grunt.registerTask('default', ['clean:dist', 'copy:fonts', 'test']);
@@ -473,16 +473,16 @@ module.exports = function (grunt) {
 
   grunt.registerTask('commonjs', 'Generate CommonJS entrypoint module in dist dir.', function () {
     var srcFiles = grunt.config.get('concat.bootstrap.src');
-    var destFilepath = 'dist/js/npm.js';
+    var destFilepath = 'dist/scripts/npm.js';
     generateCommonJSModule(grunt, srcFiles, destFilepath);
   });
 
   // Docs task.
   grunt.registerTask('docs-css', ['autoprefixer:docs', 'autoprefixer:examples', 'csscomb:docs', 'csscomb:examples', 'cssmin:docs']);
   grunt.registerTask('lint-docs-css', ['csslint:docs', 'csslint:examples']);
-  grunt.registerTask('docs-js', ['uglify:docsJs', 'uglify:customize']);
-  grunt.registerTask('lint-docs-js', ['jshint:assets', 'jscs:assets']);
-  grunt.registerTask('docs', ['docs-css', 'lint-docs-css', 'docs-js', 'lint-docs-js', 'clean:docs', 'copy:docs', 'build-customizer']);
+  grunt.registerTask('docs-scripts', ['uglify:docsJs', 'uglify:customize']);
+  grunt.registerTask('lint-docs-scripts', ['jshint:assets', 'jscs:assets']);
+  grunt.registerTask('docs', ['docs-css', 'lint-docs-css', 'docs-scripts', 'lint-docs-scripts', 'clean:docs', 'copy:docs', 'build-customizer']);
 
   // Task for updating the cached npm packages used by the Travis build (which are controlled by test-infra/npm-shrinkwrap.json).
   // This task should be run and the updated file should be committed whenever Bootstrap's dependencies change.

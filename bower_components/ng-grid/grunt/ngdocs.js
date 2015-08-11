@@ -21,7 +21,7 @@ module.exports = {
       '//ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.js',
       '//ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular-touch.js',
       '//ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular-animate.js',
-      'bower_components/csv-js/csv.js',
+      'bower_components/csv-scripts/csv.js',
       'bower_components/pdfmake/build/pdfmake.js',
       'bower_components/pdfmake/build/vfs_fonts.js'
     ],
@@ -32,8 +32,8 @@ module.exports = {
       'node_modules/marked/lib/marked.js'
     ],
     httpScripts: [
-      // process.env.TRAVIS ? '/release/<%= pkg.name %>.unstable.js' : '/release/<%= pkg.name %>.js'
-      // '/release/<%= pkg.name %>.js'
+      // process.env.TRAVIS ? '/release/<%= pkg.name %>.unstable.scripts' : '/release/<%= pkg.name %>.scripts'
+      // '/release/<%= pkg.name %>.scripts'
     ],
     styles: [
       'misc/doc/css/prettify.css',

@@ -4,7 +4,7 @@ module.exports = {
     stripBanners: true
   },
   dist: {
-    src: ['src/js/core/bootstrap.js', 'src/js/**/*.js', 'src/features/*/js/**/*.js', '.tmp/template.js'],
+    src: ['src/scripts/core/bootstrap.js', 'src/scripts/**/*.js', 'src/features/*/scripts/**/*.js', '.tmp/template.js'],
     dest: '<%= dist %>/release/<%= pkg.name %>.js'
   },
 

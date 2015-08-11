@@ -40,7 +40,7 @@ parseStatement: true, parseSourceElement: true */
 (function (root, factory) {
     'use strict';
 
-    // Universal Module Definition (UMD) to support AMD, CommonJS/Node.js,
+    // Universal Module Definition (UMD) to support AMD, CommonJS/Node.scripts,
     // Rhino, and plain browser loading.
     if (typeof define === 'function' && define.amd) {
         define(['exports'], factory);

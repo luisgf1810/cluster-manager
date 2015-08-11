@@ -83,7 +83,7 @@ function shallowClearAndCopy(src, dst) {
  * behavior.  This can be disabled by configuring the `$resourceProvider` like
  * this:
  *
- * ```js
+ * ```scripts
      app.config(['$resourceProvider', function($resourceProvider) {
        // Don't strip trailing slashes from calculated URLs
        $resourceProvider.defaults.stripTrailingSlashes = false;
@@ -177,7 +177,7 @@ function shallowClearAndCopy(src, dst) {
  *
  * @returns {Object} A resource "class" object with methods for the default set of resource actions
  *   optionally extended with custom `actions`. The default set contains these actions:
- *   ```js
+ *   ```scripts
  *   { 'get':    {method:'GET'},
  *     'save':   {method:'POST'},
  *     'query':  {method:'GET', isArray:true},
@@ -190,7 +190,7 @@ function shallowClearAndCopy(src, dst) {
  *   instance of the resource class. The actions `save`, `remove` and `delete` are available on it
  *   as  methods with the `$` prefix. This allows you to easily perform CRUD operations (create,
  *   read, update, delete) on server-side data like this:
- *   ```js
+ *   ```scripts
  *   var User = $resource('/user/:userId', {userId:'@id'});
  *   var user = User.get({userId:123}, function() {
  *     user.abc = true;
@@ -245,7 +245,7 @@ function shallowClearAndCopy(src, dst) {
  *
  * # Credit card resource
  *
- * ```js
+ * ```scripts
      // Define CreditCard class
      var CreditCard = $resource('/user/:userId/card/:cardId',
       {userId:123, cardId:'@id'}, {
@@ -289,7 +289,7 @@ function shallowClearAndCopy(src, dst) {
  * all of the non-GET methods are available with `$` prefix. This allows you to easily support CRUD
  * operations (create, read, update, delete) on server-side data.
 
-   ```js
+   ```scripts
      var User = $resource('/user/:userId', {userId:'@id'});
      User.get({userId:123}, function(user) {
        user.abc = true;
@@ -301,7 +301,7 @@ function shallowClearAndCopy(src, dst) {
  * in the response that came from the server as well as $http header getter function, so one
  * could rewrite the above example and get access to http headers as:
  *
-   ```js
+   ```scripts
      var User = $resource('/user/:userId', {userId:'@id'});
      User.get({userId:123}, function(u, getResponseHeaders){
        u.abc = true;
@@ -324,7 +324,7 @@ function shallowClearAndCopy(src, dst) {
 
  * # Creating a custom 'PUT' request
  * In this example we create a custom method on our resource to make a PUT request
- * ```js
+ * ```scripts
  *    var app = angular.module('app', ['ngResource', 'ngRoute']);
  *
  *    // Some APIs expect a PUT request in the format URL/object/ID

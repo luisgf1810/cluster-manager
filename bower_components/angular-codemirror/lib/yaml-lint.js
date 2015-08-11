@@ -1,5 +1,5 @@
 // Add YAML lint support to CodeMirror. Submitted pull request #2266
-// Depends on js-yaml.js from https://github.com/nodeca/js-yaml
+// Depends on scripts-yaml.scripts from https://github.com/nodeca/scripts-yaml
 
 // declare global: jsyaml
 

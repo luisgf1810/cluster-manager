@@ -61,7 +61,7 @@ function ($compile, $timeout, $window, $document, gridUtil, uiGridConstants) {
            * Note when testing animation that animations don't run on the tutorials.  When debugging it looks
            * like they do, but angular has a default $animate provider that is just a stub, and that's what's
            * being called.  ALso don't be fooled by the fact that your browser has actually loaded the 
-           * angular-translate.js, it's not using it.  You need to test animations in an external application. 
+           * angular-translate.scripts, it's not using it.  You need to test animations in an external application.
            */
           $scope.shown = true;
 

@@ -191,7 +191,7 @@ undefined: !!js/undefined ~
 
 # https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function
 
-function: !!js/function >
+function: !!scripts/function >
   function foobar() {
     return 'Wow! JS-YAML Rocks!';
   }

@@ -2,8 +2,8 @@
 'use strict';
 
 
-var loader = require('./js-yaml/loader');
-var dumper = require('./js-yaml/dumper');
+var loader = require('./scripts-yaml/loader');
+var dumper = require('./scripts-yaml/dumper');
 
 
 function deprecated(name) {
@@ -13,25 +13,25 @@ function deprecated(name) {
 }
 
 
-module.exports.Type                = require('./js-yaml/type');
-module.exports.Schema              = require('./js-yaml/schema');
-module.exports.FAILSAFE_SCHEMA     = require('./js-yaml/schema/failsafe');
-module.exports.JSON_SCHEMA         = require('./js-yaml/schema/json');
-module.exports.CORE_SCHEMA         = require('./js-yaml/schema/core');
-module.exports.DEFAULT_SAFE_SCHEMA = require('./js-yaml/schema/default_safe');
-module.exports.DEFAULT_FULL_SCHEMA = require('./js-yaml/schema/default_full');
+module.exports.Type                = require('./scripts-yaml/type');
+module.exports.Schema              = require('./scripts-yaml/schema');
+module.exports.FAILSAFE_SCHEMA     = require('./scripts-yaml/schema/failsafe');
+module.exports.JSON_SCHEMA         = require('./scripts-yaml/schema/json');
+module.exports.CORE_SCHEMA         = require('./scripts-yaml/schema/core');
+module.exports.DEFAULT_SAFE_SCHEMA = require('./scripts-yaml/schema/default_safe');
+module.exports.DEFAULT_FULL_SCHEMA = require('./scripts-yaml/schema/default_full');
 module.exports.load                = loader.load;
 module.exports.loadAll             = loader.loadAll;
 module.exports.safeLoad            = loader.safeLoad;
 module.exports.safeLoadAll         = loader.safeLoadAll;
 module.exports.dump                = dumper.dump;
 module.exports.safeDump            = dumper.safeDump;
-module.exports.YAMLException       = require('./js-yaml/exception');
+module.exports.YAMLException       = require('./scripts-yaml/exception');
 
 // Deprecared schema names from JS-YAML 2.0.x
-module.exports.MINIMAL_SCHEMA = require('./js-yaml/schema/failsafe');
-module.exports.SAFE_SCHEMA    = require('./js-yaml/schema/default_safe');
-module.exports.DEFAULT_SCHEMA = require('./js-yaml/schema/default_full');
+module.exports.MINIMAL_SCHEMA = require('./scripts-yaml/schema/failsafe');
+module.exports.SAFE_SCHEMA    = require('./scripts-yaml/schema/default_safe');
+module.exports.DEFAULT_SCHEMA = require('./scripts-yaml/schema/default_full');
 
 // Deprecated functions from JS-YAML 1.x.x
 module.exports.scan           = deprecated('scan');
@@ -2772,7 +2772,7 @@ module.exports = new Schema({
 // It is not described in the YAML specification.
 //
 // This schema is based on JS-YAML's default safe schema and includes
-// JavaScript-specific types: !!js/undefined, !!js/regexp and !!js/function.
+// JavaScript-specific types: !!scripts/undefined, !!scripts/regexp and !!scripts/function.
 //
 // Also this schema is used as default base schema at `Schema.create` function.
 
@@ -2788,9 +2788,9 @@ module.exports = Schema.DEFAULT = new Schema({
     require('./default_safe')
   ],
   explicit: [
-    require('../type/js/undefined'),
-    require('../type/js/regexp'),
-    require('../type/js/function')
+    require('../type/scripts/undefined'),
+    require('../type/scripts/regexp'),
+    require('../type/scripts/function')
   ]
 });
 
@@ -3410,7 +3410,7 @@ var esprima;
 
 // Browserified version does not have esprima
 //
-// 1. For node.js just require module as deps
+// 1. For node.scripts just require module as deps
 // 2. For browser try to require mudule via external AMD system.
 //    If not found - try to fallback to window.esprima. If not
 //    found too - then fail to parse.
@@ -3483,7 +3483,7 @@ function isFunction(object) {
   return '[object Function]' === Object.prototype.toString.call(object);
 }
 
-module.exports = new Type('tag:yaml.org,2002:js/function', {
+module.exports = new Type('tag:yaml.org,2002:scripts/function', {
   kind: 'scalar',
   resolve: resolveJavascriptFunction,
   construct: constructJavascriptFunction,
@@ -3569,7 +3569,7 @@ function isRegExp(object) {
   return '[object RegExp]' === Object.prototype.toString.call(object);
 }
 
-module.exports = new Type('tag:yaml.org,2002:js/regexp', {
+module.exports = new Type('tag:yaml.org,2002:scripts/regexp', {
   kind: 'scalar',
   resolve: resolveJavascriptRegExp,
   construct: constructJavascriptRegExp,
@@ -3599,7 +3599,7 @@ function isUndefined(object) {
   return 'undefined' === typeof object;
 }
 
-module.exports = new Type('tag:yaml.org,2002:js/undefined', {
+module.exports = new Type('tag:yaml.org,2002:scripts/undefined', {
   kind: 'scalar',
   resolve: resolveJavascriptUndefined,
   construct: constructJavascriptUndefined,
@@ -3951,7 +3951,7 @@ module.exports = new Type('tag:yaml.org,2002:timestamp', {
 'use strict';
 
 
-var yaml = require('./lib/js-yaml.js');
+var yaml = require('./lib/scripts-yaml.scripts');
 
 
 module.exports = yaml;

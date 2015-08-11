@@ -62,6 +62,6 @@ module.exports = {
     src: 'Gruntfile.js'
   },
   src_test: {
-    src: ['src/**/*.js', 'src/features/*/js/**/*.js', 'src/features/*/test/**/*.spec.js', 'test/**/*.spec.js']
+    src: ['src/**/*.js', 'src/features/*/scripts/**/*.js', 'src/features/*/test/**/*.spec.js', 'test/**/*.spec.js']
   }
 };

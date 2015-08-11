@@ -2,7 +2,7 @@
 // Distributed under an MIT license: http://codemirror.net/LICENSE
 
 // A rough approximation of Sublime Text's keybindings
-// Depends on addon/search/searchcursor.js and optionally addon/dialog/dialogs.js
+// Depends on addon/search/searchcursor.scripts and optionally addon/dialog/dialogs.scripts
 
 (function(mod) {
   if (typeof exports == "object" && typeof module == "object") // CommonJS

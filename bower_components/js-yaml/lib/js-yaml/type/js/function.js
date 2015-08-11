@@ -4,7 +4,7 @@ var esprima;
 
 // Browserified version does not have esprima
 //
-// 1. For node.js just require module as deps
+// 1. For node.scripts just require module as deps
 // 2. For browser try to require mudule via external AMD system.
 //    If not found - try to fallback to window.esprima. If not
 //    found too - then fail to parse.
@@ -77,7 +77,7 @@ function isFunction(object) {
   return '[object Function]' === Object.prototype.toString.call(object);
 }
 
-module.exports = new Type('tag:yaml.org,2002:js/function', {
+module.exports = new Type('tag:yaml.org,2002:scripts/function', {
   kind: 'scalar',
   resolve: resolveJavascriptFunction,
   construct: constructJavascriptFunction,

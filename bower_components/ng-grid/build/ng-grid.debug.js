@@ -1341,8 +1341,8 @@ var ngFooter = function ($scope, grid) {
         return curPage <= 1;
     };
 };
-/// <reference path="footer.js" />
-/// <reference path="../services/SortService.js" />
+/// <reference path="footer.scripts" />
+/// <reference path="../services/SortService.scripts" />
 /// <reference path="../../lib/jquery-1.8.2.min" />
 var ngGrid = function ($scope, options, sortService, domUtilityService, $filter, $templateCache, $utils, $timeout, $parse, $http, $q) {
     var defaults = {

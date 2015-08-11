@@ -1774,7 +1774,7 @@
 
                 // Spidermonkey-specific sharp variables for circular references
                 // https://developer.mozilla.org/En/Sharp_variables_in_JavaScript
-                // http://mxr.mozilla.org/mozilla-central/source/js/src/jsscan.cpp around line 1935
+                // http://mxr.mozilla.org/mozilla-central/source/scripts/src/jsscan.cpp around line 1935
                 var sharp = '#';
                 if (parser_pos < input_length && digit.test(input.charAt(parser_pos))) {
                     do {

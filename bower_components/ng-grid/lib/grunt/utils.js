@@ -4,24 +4,24 @@ var grunt = require('grunt');
 var semver = require('semver');
 var shell = require('shelljs');
 
-// Get the list of angular files (angular.js, angular-mocks.js, etc)
+// Get the list of angular files (angular.scripts, angular-mocks.scripts, etc)
 var cachedAngularFiles = grunt.file.readJSON('lib/test/angular/files.json');
 
 var util = module.exports = {
 
   testDependencies: {
-    unit: ['bower_components/jquery/jquery.min.js', 'lib/test/jquery.simulate.js', 'dist/release/ui-grid.css', 'bower_components/lodash/dist/lodash.min.js', 'bower_components/csv-js/csv.js']
+    unit: ['bower_components/jquery/jquery.min.js', 'lib/test/jquery.simulate.js', 'dist/release/ui-grid.css', 'bower_components/lodash/dist/lodash.min.js', 'bower_components/csv-scripts/csv.js']
   },
 
   testFiles: {
-    unit: ['src/js/core/bootstrap.js', 'src/js/**/*.js', 'test/unit/**/*.spec.js', 'src/features/*/js/**/*.js', 'src/features/*/test/**/*.spec.js', '.tmp/template.js'],
-    core_unit: ['src/js/core/bootstrap.js', 'src/js/**/*.js', 'test/unit/**/*.spec.js', 'src/features/*/js/**/*.js', '.tmp/template.js'],
+    unit: ['src/scripts/core/bootstrap.js', 'src/scripts/**/*.js', 'test/unit/**/*.spec.js', 'src/features/*/scripts/**/*.js', 'src/features/*/test/**/*.spec.js', '.tmp/template.js'],
+    core_unit: ['src/scripts/core/bootstrap.js', 'src/scripts/**/*.js', 'test/unit/**/*.spec.js', 'src/features/*/scripts/**/*.js', '.tmp/template.js'],
   },
   testFilesFeature: function(featureName){
     var featurePattern = 'src/features/' + featureName +'/test/**/*.spec.js';
 
     return {
-      unit: ['src/js/core/bootstrap.js', 'src/js/**/*.js', 'test/unit/**/*.spec.js', 'src/features/*/js/**/*.js', featurePattern, '.tmp/template.js'],
+      unit: ['src/scripts/core/bootstrap.js', 'src/scripts/**/*.js', 'test/unit/**/*.spec.js', 'src/features/*/scripts/**/*.js', featurePattern, '.tmp/template.js'],
       core_unit: util.testDependencies.unit.core_unit
     };
   },
@@ -265,7 +265,7 @@ var util = module.exports = {
         reporters: ['saucelabs'],
         browsers: c
         // preprocessors: {
-        //   'src/**/!(*.spec)+(.js)': ['coverage']
+        //   'src/**/!(*.spec)+(.scripts)': ['coverage']
         // },
         // coverageReporter: {
         //   type: 'lcov',

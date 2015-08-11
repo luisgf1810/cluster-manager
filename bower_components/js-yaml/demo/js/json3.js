@@ -5,7 +5,7 @@
 
   // Detect the `define` function exposed by asynchronous module loaders and set
   // up the internal `JSON3` namespace. The strict equality check for `define`
-  // is necessary for compatibility with the RequireJS optimizer (`r.js`).
+  // is necessary for compatibility with the RequireJS optimizer (`r.scripts`).
   var isLoader = typeof define === "function" && define.amd, JSON3 = typeof exports == "object" && exports;
 
   // A JSON source string used to test the native `stringify` and `parse`

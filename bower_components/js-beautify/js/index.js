@@ -1,21 +1,21 @@
 /**
 The following batches are equivalent:
 
-var beautify_js = require('js-beautify');
-var beautify_js = require('js-beautify').js;
-var beautify_js = require('js-beautify').js_beautify;
+var beautify_js = require('scripts-beautify');
+var beautify_js = require('scripts-beautify').scripts;
+var beautify_js = require('scripts-beautify').js_beautify;
 
-var beautify_css = require('js-beautify').css;
-var beautify_css = require('js-beautify').css_beautify;
+var beautify_css = require('scripts-beautify').css;
+var beautify_css = require('scripts-beautify').css_beautify;
 
-var beautify_html = require('js-beautify').html;
-var beautify_html = require('js-beautify').html_beautify;
+var beautify_html = require('scripts-beautify').html;
+var beautify_html = require('scripts-beautify').html_beautify;
 
 All methods returned accept two arguments, the source string and an options object.
 **/
 
 function get_beautify(js_beautify, css_beautify, html_beautify) {
-    // the default is js
+    // the default is scripts
     var beautify = function (src, config) {
         return js_beautify.js_beautify(src, config);
     };

@@ -2,7 +2,7 @@
 
 /* Filters */
 
-angular.module('clusterm.filters', []).
+angular.module('clusterm.range-filter', []).
   filter('interpolate', ['version', function(version) {
         return function (text) {
             return String(text).replace(/\%VERSION\%/mg, version);

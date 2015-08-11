@@ -10,14 +10,14 @@ module.exports = function (grunt) {
             main: {
                 expand: true,
                 cwd: 'app/',
-                src: ['**', '!js/**', '!lib/**', '!**/*.css'],
+                src: ['**', '!scripts/**', '!lib/**', '!**/*.css'],
                 dest: 'srv1/'
             }
         },
 
         rev: {
             files: {
-                src: ['srv1/**/*.{js,css}']
+                src: ['srv1/**/*.{scripts,css}']
             }
         },
 

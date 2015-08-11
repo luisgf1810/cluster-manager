@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  // TODO: rename this file to ui-grid-pinned-container.js
+  // TODO: rename this file to ui-grid-pinned-container.scripts
 
   angular.module('ui.grid').directive('uiGridPinnedContainer', ['gridUtil', function (gridUtil) {
     return {

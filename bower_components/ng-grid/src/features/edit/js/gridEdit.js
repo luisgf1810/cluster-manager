@@ -318,7 +318,7 @@
    *
    *  @example
    <example module="app">
-   <file name="app.js">
+   <file name="app.scripts">
    var app = angular.module('app', ['ui.grid', 'ui.grid.edit']);
 
    app.controller('MainCtrl', ['$scope', function ($scope) {

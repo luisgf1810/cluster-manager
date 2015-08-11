@@ -5,7 +5,7 @@ module.exports = {
   },
   dist: {
     files: [
-      { src: '<%= dist %>/release/*.{js,css,svg,woff,ttf,eot}', dest: '<%= dist %>/release/' }
+      { src: '<%= dist %>/release/*.{scripts,css,svg,woff,ttf,eot}', dest: '<%= dist %>/release/' }
     ]
   }
 };

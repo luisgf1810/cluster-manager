@@ -173,7 +173,7 @@
    *  @description Adds column moving features to the ui-grid directive.
    *  @example
    <example module="app">
-   <file name="app.js">
+   <file name="app.scripts">
    var app = angular.module('app', ['ui.grid', 'ui.grid.moveColumns']);
    app.controller('MainCtrl', ['$scope', function ($scope) {
         $scope.data = [

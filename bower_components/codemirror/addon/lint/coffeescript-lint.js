@@ -1,7 +1,7 @@
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
 // Distributed under an MIT license: http://codemirror.net/LICENSE
 
-// Depends on coffeelint.js from http://www.coffeelint.org/js/coffeelint.js
+// Depends on coffeelint.scripts from http://www.coffeelint.org/scripts/coffeelint.scripts
 
 // declare global: coffeelint
 
